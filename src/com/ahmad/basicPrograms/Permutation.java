@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Permutation {
 	
-	void swap(int i,int j, char[] a){
+	/*void swap(int i,int j, char[] a){
 		char temp = a[i];
 		a[i]=a[j];
 		a[j]=temp;
@@ -26,5 +26,24 @@ public class Permutation {
 		Permutation p = new Permutation();
 		char[] a  = {'a','b','c'};
 		p.rec(a, 0);
-	}
+	}*/
+	
+	//Another way
+	 public static void main(String[] args) {
+		String name = "sjr";
+		printPermutation(name ," ");
+    	}
+	
+    	public static void printPermutation(String s, String ans){
+		if(s.length() == 0){
+		    System.out.println(ans+ " ");
+		    return;
+		}
+		
+        for(int i = 0; i<s.length(); i++){
+            char ch =s.charAt(i);
+            String ros = s.substring(0, i)+s.substring(i+1);
+            printPermutation(ros,ans+ch);
+        }
+    }
 }
